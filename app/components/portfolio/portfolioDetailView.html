@@ -1,10 +1,17 @@
 
 
+
 <div id="content" style="max-width:900px;margin:0 auto;">
     
-    <div>{{ data.symbol }} {{ data.Name }}</div> 
-	<table class="table">
-				
+    <div style="font-weight: bold;">{{ data.symbol }} {{ data.Name }}</div> 
+	<div>
+		<span>${{data.LastTradePriceOnly}}</span> <span ng-class="data.Change < 0 ? 'red':'green' ">{{data.Change}} ({{data.ChangeinPercent}})</span>
+	</div>
+	
+	<nvd-line-chart val="exampleData" width="800" lastprice="{{previousPrice}}" height="500">	
+	</nvd-line-chart>
+	
+	<table class="table">				
 		<tbody>
 			<tr><td class="col-xs-6">Day Range</td><td class="col-xs-6" style="text-align: right">{{ data.DaysRange}}</td></tr>
 			<tr><td class="col-xs-6">52w Range</td><td class="col-xs-6" style="text-align: right">{{ data.YearRange}}</td></tr>

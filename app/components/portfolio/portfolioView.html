@@ -5,11 +5,25 @@
 
 <div id="content" style="max-width:900px;margin:0 auto;">
     
-	<table class="table">
-		
+	<angucomplete id="ex1"
+              placeholder="Search stocks"
+              pause="100"
+              selectedobject="selectedSymbol"
+              localdata="symbol"
+              searchfields="name"
+              titlefield="name"
+              minlength="2"
+              inputclass="form-control form-control-small"
+			  buttonclick="add(selectedSymbol.originalObject.code)"/>
+	
+	<br>
+	  
+	<table class="table">		
 		<tbody>
 			<tr ng-repeat="item in data.quote">
-				<td class="col-xs-6"><a href="#{{url}}/{{item.symbol}}">{{item.symbol}}</a></td><td class="col-xs-2" style="text-align: right">{{item.LastTradePriceOnly}}</td><td class="col-xs-4" style="text-align: right">{{item.Change}} ( {{item.ChangeinPercent}})</td>
+				<td class="col-xs-6"><a href="#{{url}}/{{item.symbol}}">{{item.symbol}}</a></td>
+				<td class="col-xs-2" style="text-align: right">{{item.LastTradePriceOnly}}</td>
+				<td class="col-xs-4" style="text-align: right" ng-class="item.Change < 0 ? 'red':'green' ">{{item.Change}} ( {{item.ChangeinPercent}})</td>
 			</tr>
 		</tbody>
 	</table>

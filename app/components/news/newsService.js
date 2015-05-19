@@ -8,8 +8,9 @@ ezStockApp.factory('newsService', ['$http', function($http){
          console.log(symbol);
 		
 		
-		$http.get('http://finance.yahoo.com/rss/headline?s='+symbol) 
-				
+		//$http.get('http://finance.yahoo.com/rss/headline?s='+symbol) 
+        	$http.get('https://www.google.com/finance/company_news?output=rss&q=NASDAQ:'+symbol) 
+                
 		.success(function(data) {			
 			callback(data);
         })

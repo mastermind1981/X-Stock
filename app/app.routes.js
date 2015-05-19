@@ -1,4 +1,4 @@
-var ezStockApp = angular.module('ezStockApp', ['ngRoute']);
+var ezStockApp = angular.module('ezStockApp', ['ngRoute', 'angucomplete']);
 
 ezStockApp.config(['$routeProvider','$locationProvider',
   function($routeProvider, $locationProvider) {
