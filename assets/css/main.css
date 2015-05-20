@@ -25,3 +25,8 @@ h3 {
 .green {
 	color:#22B500;
 }
+
+.angucomplete-row .angucomplete-title  {
+  PADDING: 5PX 0PX;
+  BORDER-BOTTOM: 1PX SOLID #CCC;
+  }
